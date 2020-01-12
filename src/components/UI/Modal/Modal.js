@@ -2,9 +2,12 @@ import React from 'react';
 
 import classes from './Modal.css';
 import { transform } from '@babel/core';
+import Aux from '../../../hoc/Aux';
+import Backdrop from '../Backdrop/Backdrop';
 
 const modal = (props) => (
-
+<Aux>
+    <Backdrop show={props.shopw} clicked={props.modalClosed}/>
 <div className={classes.Modal}
     style={{
         transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
@@ -12,7 +15,7 @@ const modal = (props) => (
     }}>
     {props.children} 
 </div> 
-
+</Aux>
 );
 
 
